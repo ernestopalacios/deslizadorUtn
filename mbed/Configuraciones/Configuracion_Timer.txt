@@ -1,0 +1,96 @@
+----------------------------------------------------------
+    Configuración de los Temporizadores 
+----------------------------------------------------------
+
+El microcontrolador cuenta con cuatro temporizadores,
+Timer0/1/2/3. El Timer3 es utilizado por el sistema
+en sus librerias internas.
+
+Para generar el tren de pulsos, ( PTO ) utilizaremos 
+el Timer2.
+
+El timer se configura como un contador de 32bits, con
+un reloj interno de 24MHz [96MHz/4]. 
+
+Tambien se cuenta con un preescaler de 32bits, y con
+un registro de coincidencia ( MR2 ).
+
+Cuando el contador del Timer2 (TC) es igual al registro
+MR2, la salida del microcontrolador cambia de estado.
+
+Tfeq = 24 000 000 Hz       [Frecuencia interna del Timer]
+PR   =      1 000          [Valor del Preescaler]
+MR   =     24 000          [Bandera de Coincidencia]
+
+Fout = Tfeq / ( PR * MR ); [ Frecuancia de Salida ]
+
+Fout = 24 MHz / ( 1000 * 2400 )
+Fout = 1Hz = 1 seg.
+
+
+----------------------------------------------------------
+    REGISTROS UTILIZADOS
+---------------------------------------------------------
+
+Referirse al Datasheet:
+
+PINSEL0 MAT2.2  17:16->  1 1    // Seleccion de Funcion de
+        MAT2.3  19:18->  1 1    // pines p5 y p6 de mbed
+
+MR2  : Match Register 2  //Registro de Coincidencia 2
+MR3  : Match Register 3  //Registro de Coincidencia 3
+
+EMR  : External Match Register: // Registro de Coincidencia 
+								// Externa
+
+LPC_PINCON->PINSEL0 // Acceso al registro de configuracion 
+                    // de los pines para el puerto 0.
+
+
+// Diferentes registros para el Timer 2
+LPC_TIM2->	IR         
+         	TCR
+		 	TC     
+		 	PR           // Prescaler
+		 	PC
+		 	MCR      
+		 	MR0,1,2,3    // Match Registers
+		 	CCR
+		 	CR0
+		 	CR1
+		 	EMR         // External Match Register
+		 	CTCR
+
+--------------------------------------------------------------
+                GENERADOR DE FRECUENCIAS
+--------------------------------------------------------------
+
+Tfeq = 24 MHz
+
+Frecuencia Maxima del Driver 500kHz
+Frecuencia Mínima del Driver 10Hz
+_____________________________________________________________
+     Tabla de Frecuencias que es posible generar.
+_____________________________________________________________
+PRESCALER  = 0 		
+
+ MR 		Freq (Hz)    	Error
+
+
+ 47, 		500000, 		0.			|  Se tiene un control
+ 48, 		489796, 		-0.0816327	|  aproximado de 10 kHz
+ 49, 		480000, 		0.			|  
+ 50, 		470588, 		0.235294	|  Es decir se puede 
+ 51, 		461538, 		0.461538	|  variar en pasos de 
+ 52, 		452830, 		0.188679	|  10kHz a esta frecuen
+ 53, 		444444, 		0.444444	|  cia.
+ 54, 		436364, 		-0.363636	|
+ 55, 		428571, 		0.428571	|  No esta mal conside
+ 56, 		421053, 		-0.368421	|  rando que son los má-
+ 57, 		413793, 		0.103448	|  ximos valores permi-
+ 58, 		406780, 		-0.338983	|  sibles para el driver.
+ 59, 		400000, 		0.			|
+ 60, 		393443, 		-0.377049	|
+_______________________________________________________________
+
+

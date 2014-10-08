@@ -1,0 +1,12 @@
+Aqui se guardaran los documentos del API para LabVIEW
+
+Se dividen en dos categorías:
+
+   -  HTTP
+   -  Serial
+
+Cada categoria tiene tres clases:
+
+   -  Bajo Nivel   [ASM]
+   -  Nivel Medio  [MOT]
+   -  Alto nivel   [DLZ]

@@ -1,0 +1,49 @@
+Examples using C/Assembler
+
+void initTMR0(){
+
+    // power up TIMER0 (PCONP[1])
+    LPC_SC->PCONP |= 1 << 1; 
+
+    // reset and set TIMER0 to timer mode
+    LPC_TIM0->TCR = 0x2;  
+    LPC_TIM0->CTCR = 0x0; 
+    
+    // set no prescaler
+    LPC_TIM0->PR = 0;
+
+    // calculate period (1 interrupt every mili-second)
+    uint32_t period = SystemCoreClock / 4000; 
+
+    // set match register and enable interrupt    
+    LPC_TIM0->MR0 = period;
+    LPC_TIM0->MCR |= 1 << 0;    // interrupt on match
+    LPC_TIM0->MCR |= 1 << 1;    // reset on match
+
+    // enable the vector in the interrupt controller
+    NVIC_SetVector(TIMER0_IRQn, (uint32_t)&getAngle);
+    NVIC_EnableIRQ(TIMER0_IRQn);
+
+    // start the timer
+    LPC_TIM0->TCR = 1;
+}
+
+void ISR_Serial(){
+    char c = pc.getc();
+
+    if( c = 'w')
+       setPeriodUp();
+    else if( c = 's')
+       setPeriodDown();
+    
+    else if( c = 'z')
+    {
+        float newStep;
+        pc.printf("\nIntroduce new step: ");
+        pc.scanf( "%d", &newStep );
+        setPeriodStep( newStep );
+    }
+
+}
+
+pc.attach( &ISR_Serial );

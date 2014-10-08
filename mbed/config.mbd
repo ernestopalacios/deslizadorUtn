@@ -1,0 +1,12 @@
+-------------------------------------------------
+-------   CONFIGURACION ARM-MBED          -------
+-------------------------------------------------
+  
+baudios 115200
+
+
+-------------------------------------------------
+baudios =       Velocidad alterna para la salida
+                serial a MAX232. El valor por
+                defecto el valor es 115200 bauds
+

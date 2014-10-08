@@ -1,0 +1,36 @@
+-------------------------------------------------------------
+               LIBRERIA DE BAJO NIVEL  [ASM]
+-------------------------------------------------------------
+
+Está es la única libreria que estará en contacto directo con 
+el microcontrolador, por lo tanto definirá el funcionamiento
+básico de todo el deslizador. Esta es la base sobre la que
+se construirá el API.
+
+>> El Protocolo RPC
+
+     	Este protocolo permite controlar de manera dinámica
+     	las variables del microcontrolador. También variables
+     	propias del programador y funciones del programador.
+
+El usuario de las librerias solo enviara un comando cuando el
+valor vaya a cambiar, y las variables a nivel bajo serán:
+
+	1.  Encender el Servo ( SON, servo ON )
+	2. 	Cambiar la frecuencia de salida.
+	3.	Encender la salida PTO. 
+	4.	Para la salida PTO.
+	3.	Cambiar el voltaje de salida +/- 10V
+	4.	Leer velocidad actual.
+
+Todas estas serán funciones en el microcontrolador. El MBED 
+recibirá la instruccion y la ejecutará deacuerdo a como se
+lo programe. Las demas funciones.
+
+El resto de funciones del micrcontrolador. Entradas Analogicas,
+salidas de PWM, SPI, I2C, estarán tambien a disposición del usuario a través de las librerias RPC, pero será tarea tambien del usuario
+el aprender acerca de la correcta utilización de estos recursos.
+
+las fuciones de bajo nivel serán:
+
+  

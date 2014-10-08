@@ -1,0 +1,48 @@
+
+ROM used: 586 (2%)
+          586 (2%) including unused fragments
+
+          1 Average locations per line
+          10 Average locations per statement
+
+RAM used: 38 (2%) at main() level
+          40 (2%) worst case
+
+Stack used: 3 worst case (out of 29 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  160    57 100  main.c
+  371     0   0  C:\Program Files\PICC\devices\18F2550.h
+----- -----
+  531    57 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40   3   1             @delay_ms1
+0     24   2   1             @I2C_WRITE_1
+0     72   6   1   187  4.4  external_RB4
+0    132  11   1   685  5.3  ISR_I2C
+0    152  13   0   646  2.9  MAIN
+
+Program metrics:
+    Functions               3
+    Statements              57
+    Comments                172
+    Volume (V)              1909
+    Difficilty (D)          12.6
+    Effort to implement (E) 24131
+    Time to implement (T)   22 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   11
+    Maintainability (MI)    52
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000A8   162  0  
+000AA-07FFE   420  32178  
+
+
+

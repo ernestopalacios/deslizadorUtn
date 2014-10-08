@@ -1,0 +1,27 @@
+----------------------------------
+Configuración Ethernet de mbed
+----------------------------------
+
+Para la comunicación ethernet es necesario con tener el
+microcontrolador mbed en una protoboard y utilizando un
+cable de red, no cruzado, pelar sus cables y conectarlos
+de la siguiente manera:
+
+Verde/Blanco  :    RD-
+Verde         :    RD+
+Naranja/Blanco:    TD-
+Naranja       :    TD+
+
+Se conectan directamente a los pines del micro los otros
+colores no son necesarios.
+
+Para probar que existe comunicación se puede utilizar el 
+programa EthernetTesterGood: 
+
+http://mbed.org/users/JeffM/programs/EthernetTesterGood/lgncop
+
+Abrir el terminal serial del microcontrolador para saber
+la dirección IP Dinámica otorgada por el router, luego en 
+cualquier navegador insertar la direccion. Si todo sale bien
+se debe ver un mensaje en el navegador como el siguiente:
+

@@ -1,0 +1,95 @@
+Características del motor:
+
+Tipo: 110SJT-M020E(A)
+
+Un   = 220V       In = 8A
+Tn   = 2 N.m      Nn: 3000 RPM
+Nmax = 3300 RPM   INS: CLASS B
+M:   2500 r/rev
+
+﻿API en LabVIEW
+
+  
+  Variables a Controlar:
+
+
+  -  Velocidad del motor
+
+  -  Salida Analógica
+
+  -  Posición del Motor
+
+  -  Salida PTO (Pulse Train Output)
+
+  -  Lectura de los Encoders
+
+  -  Entrada de Cuadratura
+
+
+
+  Niveles del API:
+
+
+
+  -  Bajo Nivel [ASM]
+
+     - Contorla directamente las variables del microcontrolador.
+  
+     - TIMER
+
+     - Aout
+ 
+     - Ain's
+
+     - Encoders
+
+     - No interesa que parámetros tiene el Driver.
+
+
+
+  -  Nivel medio [MOT]
+
+     - Controla las variables del motor. Depende de la configuración del Driver
+
+     - Velocidad en RPM / Vout
+
+     - Posición en grados / PTO
+
+     - Se puede ejecutar una prueba para conocer los párametros actuales del 
+       Driver por medio de los enconders.
+
+     - Depende de la configuración actual del driver.
+
+
+  -  Nivel Alto [DLZ]
+
+     - Actúa sobre el deslizador
+     - Velocidad Lineal (cm/s) del deslizador
+
+     - Desplazar 'n' centímetros hacia la derecha/izquierda
+
+     - Ir a Posición 'n' milímetros del deslizador <- Depende de la resolución.
+
+     - Se debe seleccionar encoder interno o externo
+
+
+
+
+ENCODERS
+
+
+  Dos encoders, uno interno, propio del motor y uno externo. Por defecto se 
+  usará el encoder interno [quad_int]. Pero se puede alternar por el otro o 
+  los
+  dos a la vez, lo cual cambiará la programación del MBED.
+
+   
+Una posible expansión de la tesis:
+    http://www.youtube.com/watch?v=UmeJ1DxtTGM
+
+   - 3 ejes de libertad
+   - Sistema Mecanico similar al utilizado para el deslizador
+
+
+     
+

@@ -1,0 +1,2319 @@
+@charset "utf-8";
+/* content="charset=UTF-8" */
+
+/* Browser Reset
+==================================================================================== */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+	padding:0;
+	margin:0;
+}
+fieldset,img {
+	border:0;
+}
+img {
+	vertical-align:bottom;
+}
+address,caption,cite,code,dfn,em,th,var {
+	font-weight:normal;
+	font-style:normal;
+}
+ol,ul {
+	list-style:none;
+	list-style-position:outside;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight:normal;
+	font-size:100%;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym {
+	border:0;
+}
+
+
+/* Standerd
+==================================================================================== */
+ol {
+	list-style:decimal;
+	padding:0px 0px 0px 20px;
+}
+ol.romU {
+	list-style-type:upper-roman;
+}
+ol.alpL {
+	list-style-type:lower-alpha;
+}
+* html ol {
+	padding:0px 0px 0px 30px;
+}
+*:first-child+html ol {
+	padding:0px 0px 0px 30px;
+}
+ol li {
+	margin:5px 0px;
+}
+p {
+	margin-bottom:1.5em;
+}
+.ls {
+	line-height:190%;
+}
+.clear {
+	clear:both;
+}
+a,
+p a.noLink {
+	color:#1D3994;
+	text-decoration:none;
+}
+a:visited {
+	color:#941D55;
+}
+a:hover,
+p a.noLink:hover {
+	text-decoration:underline;
+}
+p a,
+a.pLink {
+	text-decoration:underline;
+}
+p a:hover,
+a.pLink:hover {
+	text-decoration:none;
+}
+
+.none {
+	display:none!important;
+}
+.edge {
+	margin-right:0px!important;
+	border:none!important;
+}
+/* body
+==================================================================================== */
+body {
+	color:#333333;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:12px;
+	line-height:160%;
+}
+
+
+/* ====================================================================================
+
+header
+
+==================================================================================== */
+#header {
+	width:auto;
+	margin:0px 0px 10px 0px;
+}
+#header a {
+	text-decoration:none;
+}
+#header a:hover {
+	text-decoration:underline;
+}
+#header p {
+	margin-bottom:0px;
+}
+
+/* tagLine
+------------------------------------------------------------------------------------ */
+#tagLine {
+	width:100%;
+	min-height:29px;
+	margin:0px 0px 15px 0px;
+	background-color:#f2f2f2;
+}
+#tagLine div.inner {
+	margin:0 auto;
+	width:950px;
+}
+p.noScript {
+	padding:26px 0px 16px 0px;
+	text-align:left;
+}
+p.noScript span {
+	color:#FF0000;
+	font-size:16px;
+	font-weight:bold;
+	text-align:left;
+}
+p.noScript a, p.noScript a:visited {
+	text-decoration:underline;
+}
+#tagLine div.login,
+#tagLine p.catch {
+	float:left;
+	padding:5px 0;
+	width:50%;
+}
+#tagLine div.login {
+	text-indent:5px;
+}
+#tagLine div.login a {
+	text-decoration:underline
+}
+#tagLine div.login a:hover {
+	text-decoration:none;
+}
+#tagLine p.catch {
+	text-align:right;
+}
+#tagLine p.catch a {
+	color:#af7b3e;
+}
+
+
+/* logoLine
+------------------------------------------------------------------------------------ */
+#logoLine {
+	width:950px;
+	margin:0px auto 15px auto;
+}
+
+/* logo -------------------------------------------------------------------------------*/
+#logo {
+	width:auto;
+	float:left;
+	height:24px;
+	line-height:24px;
+}
+* html #logo {
+	width:230px;
+}
+#logo a {
+	display:block;
+	height:100%;
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 0px 0px;
+	padding:0px 0px 0px 109px;
+}
+#logo a span.sub {
+	color:#666;
+	font-size:16px;
+	font-weight:bold;
+}
+#logo a:hover {
+	text-decoration:none;
+}
+
+/* users -------------------------------------------------------------------------------*/
+#users {
+	height:21px;
+	line-height:21px;
+	float:right;
+	margin:2px 0px 0px 0px;
+}
+#users li {
+	float:right;
+	margin:0px 5px 0px 0px;
+	font-size:10px;
+	color:#d3d3d3;
+}
+* html #users li {
+	font-size:9px;
+}
+*:first-child+html #users li {
+	font-size:9px;
+}
+#logoLine .btnWos,
+#lg01,
+#lg02 {
+	height:21px;
+	padding:0px 0px 0px 3px;
+}
+#logoLine .btnWos {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -202px -264px;
+}
+#lg01,
+#lg02 {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -202px -222px;
+}
+#users li a {
+	line-height:21px;
+	text-align:center;
+}
+#logoLine .btnWos a,
+#lg01 a,
+#lg02 a {
+	color:#FFFFFF;
+	display:block;
+	height:100%;
+	padding:0px 3px 0px 0px;
+	width:82px;
+}
+#logoLine .btnWos a {
+	background:#AF7B3E url(/common/images/misumiec.png) no-repeat scroll -120px -285px;
+}
+#lg01 a,
+#lg02 a {
+	background:#2d5393 url(/common/images/misumiec.png) no-repeat scroll -120px -243px;
+}
+#lg01 a span,
+#lg02 a span,
+#lg03 a {
+	display:block;
+}
+#lg01 a span {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -173px -875px;
+	text-indent:20px;
+}
+#lg02 a span {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -187px -930px;
+	text-indent:15px;
+}
+#lg03 a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -195px -765px;
+	text-indent:15px;
+}
+
+/* gNav
+------------------------------------------------------------------------------------ */
+#gNav {
+	width:950px;
+	margin:0px auto 15px auto;
+}
+#gNav li {
+	float:left;
+	height:22px;
+}
+#gn01 {
+	width:244px;
+}
+#gn01 a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 40px -24px;
+}
+#gn02 {
+	width:243px;
+}
+#gn02 a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 40px -49px;
+}
+#gn03 {
+	width:246px;
+}
+#gn03 a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 40px -74px;
+}
+#gNav li.emp {
+	width:214px;
+	height:20px!important;
+	border-bottom:3px solid #f3f3f3;
+}
+#gNav li a {
+	display:block;
+	width:100%;
+	height:12px;
+	padding:0px 0px 8px 0px;
+	border-bottom:3px solid #f3f3f3;
+}
+#gNav li.current a,
+#gNav li a:hover {
+	border-bottom:3px solid #377EFF;
+}
+#gNav li.sep {
+	width:1px;
+	height:12px;
+	background-color:#d3d3d3;
+}
+
+
+/* search
+------------------------------------------------------------------------------------ */
+#search {
+	width:945px;
+	height:46px;
+	margin:0px auto;
+	position:relative;
+	z-index:2;
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -200px -366px;
+	padding:0px 0px 0px 5px;
+}
+#search div.mid {
+	height:100%;
+	background:#e9e9e9 url(/common/images/misumiec.png) no-repeat scroll 740px -412px;
+	padding:0px 7px 0px 0px;
+}
+#search div.inner {
+	background-color:#f2f2f2;
+	padding:0px 0px 1px 0px;
+	width:100%;
+	height:43px;
+	border-bottom:1px solid #bcbcbc;
+}
+
+
+/* srcBox -------------------------------------------------------------------------------*/
+#srcBox {
+	width:395px;
+	float:left;
+	height:34px;
+	margin:10px 0px 0px 0px;
+	position:relative;
+}
+#srcBox input.textBox {
+	width:266px;
+	height:22px;
+	line-height:22px;
+	border:2px solid #427fdd;
+	background:#FFF url(/common/images/misumiec.png) no-repeat scroll -191px -174px;
+	position:absolute;
+	left:10px;
+	top:0px;
+	padding:0px 0px 0px 18px;
+}
+#srcBox input.btn {
+	width:94px;
+	height:28px;
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 0px -174px;
+	cursor:pointer;
+	border:none;
+	position:absolute;
+	right:0px;
+	top:0px;
+}
+
+/* serviceBox -------------------------------------------------------------------------------*/
+#serviceBox {
+	position:absolute;
+	background-color:#FFF;
+	border:1px solid #2d5393;
+	left:10px;
+	top:26px;
+	z-index:99;
+	width:286px;
+	display:none;
+	line-height:130%;
+}
+#serviceBox li.sb01 {
+	padding:9px 10px;
+	border-bottom:1px dotted #104A9B;
+}
+#serviceBox li.sb01 p {
+	width:40%;
+	float:left;
+	color:#888888;
+}
+#serviceBox li.sb01 p.right {
+	width:60%;
+	text-align:right;
+	float:right;
+}
+#serviceBox li.sb01 p strong {
+	color:#000;
+}
+#serviceBox li.sb02 {
+	margin:10px 0px;
+}
+*:first-child+html #serviceBox li.sb02 {
+	margin:0px 0px 10px 0px;
+}
+#serviceBox li.sb02 a {
+	display:block;
+	width:266px;
+	height:16px;
+	padding:2px 10px;
+}
+#serviceBox li.sb02 a,
+#serviceBox li.sb02 a:visited {
+	color:#104A9B;
+}
+#serviceBox li.sb02 a:hover,
+#serviceBox li.sb02 a.supportKeywordFocus {
+	text-decoration:none;
+	background-color:#104A9B;
+	color:#FFFFFF;
+}
+#serviceBox #suggest_list_box {
+	padding:5px;
+}
+#serviceBox li.sb03 {
+	width:83px;
+	margin:0px 10px 10px 193px;
+}
+#serviceBox li.sb03 div {
+	width:40px;
+	height:15px;
+	line-height:15px;
+	float:left;
+}
+#serviceBox li.sb03 div.back,
+#serviceBox li.sb03 div.back_off {
+	margin:0px 3px 0px 0px;
+}
+#serviceBox li.sb03 div span {
+	display:block;
+	height:15px;
+}
+#serviceBox li.sb03 div span.left,
+#serviceBox li.sb03 div span.right {
+	width:2px;
+	float:left;
+}
+#serviceBox li.sb03 div span.left {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -203px -306px;
+}
+#serviceBox li.sb03 div span.right {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -203px -321px;
+}
+#serviceBox li.sb03 div.back_off span.left,
+#serviceBox li.sb03 div.prev_off span.left {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -203px -336px;
+}
+#serviceBox li.sb03 div.back_off span.right,
+#serviceBox li.sb03 div.prev_off span.right {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -203px -351px;
+}
+#serviceBox li.sb03 div span.mid {
+	width:36px;
+	float:left;
+	text-align:center;
+}
+#serviceBox li.sb03 div span.mid {
+	background-color:#2d5393;
+}
+#serviceBox li.sb03 div.back_off span.mid,
+#serviceBox li.sb03 div.prev_off span.mid {
+	background-color:#ededed;
+}
+#serviceBox li.sb03 div span.mid a {
+	color:#FFF;
+}
+#serviceBox li.sb03 div span.ico {
+	width:4px;
+	height:7px;
+}
+#serviceBox li.sb03 div.back span.ico,
+#serviceBox li.sb03 div.back_off span.ico {
+	float:left;
+	margin:4px 3px 0px 5px;
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -201px -1201px;
+}
+* html #serviceBox li.sb03 div.back span.ico,
+* html #serviceBox li.sb03 div.back_off span.ico {
+	margin:4px 3px 0px 2px;
+}
+#serviceBox li.sb03 div.back span.txt,
+#serviceBox li.sb03 div.back_off span.txt {
+	float:left;
+	font-size:9px;
+	color:#FFF;
+}
+#serviceBox li.sb03 div.prev span.ico,
+#serviceBox li.sb03 div.prev_off span.ico {
+	float:right;
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -201px -1074px;
+	margin:4px 3px 0px 1px;
+}
+* html #serviceBox li.sb03 div.prev span.ico,
+* html #serviceBox li.sb03 div.prev_off span.ico {
+	margin:4px 1px 0px 1px;
+}
+#serviceBox li.sb03 div.prev span.txt,
+#serviceBox li.sb03 div.prev_off span.txt {
+	float:right;
+	font-size:9px;
+	color:#FFF;
+	margin:0px 2px 0px 3px;
+}
+#serviceBox li.sb03 div.btnOn a {
+	cursor:pointer;
+}
+#serviceBox li.sb03 div.btnOn a span.txt {
+	text-decoration:underline;
+}
+
+
+/* srcMenu -------------------------------------------------------------------------------*/
+#srcMenu {
+	width:530px;
+	height:26px;
+	float:right;
+	margin:10px 0px 0px 0px;
+}
+#srcMenu li {
+	width:auto;
+	height:100%;
+	line-height:26px;
+	float:left;
+	padding:0px 10px 0px 0px;
+	font-size:10px;
+	color:#104a9b;
+}
+* html #srcMenu li {
+	width:116px;
+	font-size:9px;
+}
+*:first-child+html #srcMenu li {
+	font-size:9px;
+}
+#srcMenu li a {
+	display:block;
+	height:100%;
+}
+#srcMenu li a:visited {
+	color:#104a9b;
+}
+#sm01 {
+	position:relative;
+	width:77px;
+	margin:0px 10px 0px 0px;
+	padding:0px 8px!important;
+	cursor:pointer;
+}
+* html #sm01 {
+	width:76px!important;
+}
+#sm01.menuOn {
+	color:#FFF;
+	background-color:#104a9b;
+}
+#sm01 span {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -198px -1243px;
+	padding:0px 0px 0px 11px;
+}
+* html #sm01 span {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -198px -1245px;
+}
+*:first-child+html #sm01 span {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -198px -1245px;
+}
+#sm01.menuOn span {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -198px -1287px;
+}
+* html #sm01.menuOn span {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -198px -1289px;
+}
+*:first-child+html #sm01.menuOn span {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -198px -1289px;
+}
+
+
+/* subMenu -------------------------------------------------------------------------------*/
+#sm01 ul.subMenu {
+	width:188px;
+	position:absolute;
+	left:0px;
+	top:26px;
+	background-color:#FFF;
+	border:1px solid #2d5393;
+	z-index:100;
+	display:none;
+}
+#sm01.menuOn ul.subMenu {
+	display:block;
+}
+#sm01 ul.subMenu li {
+	border-bottom:1px dotted #104A9B;
+	padding:0px;
+	line-height:130%!important;
+	font-size:12px!important;
+}
+#sm01 ul.subMenu li a {
+	display:block;
+	width:178px;
+	min-height:16px;
+	padding:4px 0px 4px 10px;
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -193px -979px;
+	text-indent:10px;
+}
+* html #sm01 ul.subMenu li a {
+	min-height:16px;
+	height:auto!important;
+	height:16px;
+}
+#sm01 ul.subMenu li a:visited {
+	color:#104a9b;
+}
+#sm01 ul.subMenu li a:hover {
+	background:#104A9B url(/common/images/misumiec.png) no-repeat scroll -193px -1066px;
+	text-decoration:none;
+	color:#FFF;
+}
+#sm01 ul.subMenu li p.title {
+	margin:8px 0px 0px 10px;
+	color:#888;
+}
+#sm01 ul.subMenu li ul li {
+	border-bottom:none;
+}
+#sm01 ul.subMenu li ul li a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -185px -979px;
+	text-indent:18px;
+}
+#sm01 ul.subMenu li ul li a:hover {
+	background:#104A9B url(/common/images/misumiec.png) no-repeat scroll -185px -1066px;
+}
+
+#sm02 {
+	border-right:1px solid #d3d3d3;
+}
+* html #sm02 {
+	width:80px!important;
+}
+#sm02 a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -195px -712px;
+	padding:0px 0px 0px 15px;
+}
+#srcMenu li#sm03 {
+	padding:0px 10px 0px 0px;
+}
+#srcMenu li#sm03 a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -185px -816px;
+	padding:0px 0px 0px 24px;
+}
+#srcMenu li#corp {
+	float:right;
+	padding:0px 6px;
+	position:relative;
+	text-align:right;
+}
+* html #srcMenu li#corp {
+	width:110px;
+}
+#srcMenu li#corp.on {
+	background-color:#104A9B;
+}
+#corp a {
+	text-decoration:underline;
+}
+#corp a:hover {
+	text-decoration:none;
+}
+#corp.on a {
+	color:#FFF!important;
+	text-decoration:none;
+}
+
+
+/* dialog -------------------------------------------------------------------------------*/
+#corp div.dialog{
+	text-align:left;
+	position:absolute;
+	right:0px;
+	top:26px;
+	z-index:100;
+	background-color:#FFF;
+	width:290px;
+	border:2px solid #2d5393 ;
+	display:none;
+	line-height:130%;
+}
+#corp.on div.dialog{
+	display:block;
+}
+#corp div.title{
+	background-color:#FFF;
+	width:294px;
+}
+#corp div.title p{
+	display:block;
+	background-color:#2d5393;
+	text-align:right;
+	color:#FFF;
+	padding:5px 10px 5px 10px;
+	float:right;
+}
+#corp div.close{
+	width:290px;
+	height:18px;
+}
+#corp div.close a{
+	display:block;
+	float:right;
+	width:18px;
+	height:18px;
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 0px -202px;
+	text-indent:-9999px;
+}
+#corp div.switch {
+	clear:both;
+	min-height:140px;
+}
+#corp p.sub{
+	color:#000;
+	padding:0px 10px;
+}
+#corp p.thanks{
+	text-align:center;
+	padding:55px 0px 15px 0px;
+}
+#corp div.switch a{
+	text-align:center;
+	display:block;
+	text-decoration:underline;
+	color:#104a9b;
+}
+#corp textarea.mess{
+	width:268px;
+	height:85px;
+	margin:9px 9px 8px 9px;
+	background-color:#FFF;
+	border:1px solid #767676;
+}
+#corp a.submit{
+	display:block;
+	width:61px;
+	height:20px;
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -18px -202px;
+	text-indent:-9999px;
+	margin:auto;
+}
+#corp p.caution{
+	color:#999;
+	font-size:10px;
+	padding:11px 10px;
+}
+* html #corp p.caution{
+	font-size:9px;
+}
+*:first-child+html #corp p.caution{
+	font-size:9px;
+}
+
+/* contents
+==================================================================================== */
+#contents {
+	width:950px;
+	margin:0px auto;
+}
+
+
+/* breadClumb
+==================================================================================== */
+#breadClumb {
+	margin:0px 0px 10px 0px;
+}
+#breadClumb li {
+	display:inline;
+	margin:0px 5px 0px 0px;
+}
+#breadClumb a,
+.emergency a {
+	text-decoration:none;
+}
+#breadClumb a:hover,
+.emergency a:hover {
+	text-decoration:underline;
+}
+.emergency {
+	margin:0px 0px 20px 0px;
+}
+.emergency a {
+	display:block;
+	color:red;
+	font-size:18px;
+	font-weight:bold;
+	text-align:center;
+	padding:20px;
+	border:2px solid red;
+}
+
+
+/* ====================================================================================
+
+rightArea
+
+==================================================================================== */
+#rightArea {
+	width:730px;
+	float:right;
+}
+#fullContents h1,
+#rightArea h1,
+#popup h1 {
+	color:#4d4d4d;
+	font-size:150%;
+	font-weight:bold;
+	margin:0px 0px 30px 0px;
+	padding:10px 0px 0px 10px;
+	border-top:3px solid #377eff;
+}
+#fullContents h1.keyVisual,
+#rightArea h1.keyVisual,
+#popup h1.keyVisual {
+	padding:0px;
+	border:none;
+	background:none;
+}
+#fullContents h2,
+#rightArea h2,
+#popup h2 {
+	font-size:125%;
+	font-weight:bold;
+	margin:0px 0px 10px 0px;
+	padding:0px 0px 3px 0px;
+	color:#1664ea;
+	border-bottom:1px solid #dfdfdf;
+}
+#fullContents h3,
+#rightArea h3,
+#popup h3 {
+	font-weight:bold;
+}
+
+
+/* ====================================================================================
+
+leftArea
+
+==================================================================================== */
+#leftArea {
+	width:205px;
+	float:left;
+	line-height:130%;
+}
+#leftArea a {
+	text-decoration:none;
+}
+#leftArea a:hover {
+	text-decoration:underline;
+}
+/* leftMenu ---------------------------------------------------------------------------*/
+#leftMenu {
+	width:203px;
+	margin:0px 0px 10px 0px;
+	border:1px solid #dfdfdf;
+}
+#leftMenu ul {
+	padding:10px 3px 5px 10px ;
+	border-bottom:1px solid #dfdfdf;
+}
+#leftMenu ul ul {
+	padding:10px 3px 0px 0px;
+	border-bottom:none;
+}
+#leftMenu li {
+	margin:0px 0px 10px 0px;
+}
+#leftMenu h2,
+#leftMenu h2.inq a {
+	color:#333;
+	font-size:100%;
+	width:183px;
+	font-weight:bold;
+	margin:0px 5px 0px 5px;
+	padding:7px 5px 3px 5px;
+	border-bottom:3px solid #377eff;
+	border-left:none;
+}
+#leftMenu h2.inq {
+	border:none;
+	margin:0px;
+	padding:0px;
+}
+#leftMenu h2.inq a {
+	width:167px;
+	display:block;
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -189px -1727px;
+	padding:7px 5px 3px 21px;
+}
+#leftMenu h2.inq a:hover {
+	text-decoration:none;
+	border-bottom:3px solid #0030cf;
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -190px -1782px;
+}
+#leftMenu .mark2 li,
+#leftMenu .mark2 {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -197px -983px;
+}
+#leftMenu .mark3 li,
+#leftMenu .mark3 {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -195px -1420px;
+}
+#leftMenu ul.mark2,
+#leftMenu ul.mark3 {
+	background:none;
+}
+
+/* ====================================================================================
+
+leftArea for General Top and Mech
+
+==================================================================================== */
+
+/* h2 ---------------------------------------------------------------------------*/
+#leftArea div.title {
+	line-height:150%;
+	margin:0px 0px 5px 0px;
+}
+#leftArea div.title h2 {
+	font-weight:bold;
+	font-size:125%;
+	padding:0px 20px 2px 0px;
+	border-bottom:3px solid #2d5393;
+	float:left;
+}
+#leftArea div.title h2 a:hover {
+	text-decoration:none;
+}
+#leftArea div.title div.line {
+	height:20px;
+	border-bottom:3px solid #e9e9e9;
+}
+* html #leftArea div.title div.line {
+	height:21px;
+}
+*:first-child+html #leftArea div.title div.line {
+	height:21px;
+}
+/* leftNavi ---------------------------------------------------------------------------*/
+#leftArea div.leftNavi {
+	width:100%;
+	margin:0px 0px 10px 0px;
+	line-height:150%;
+}
+#leftArea div.leftNavi div.top {
+	width:205px;
+	height:6px;
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 0px -1844px;
+}
+#leftArea div.leftNavi div.btm {
+	width:205px;
+	height:7px;
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 0px -1851px;
+}
+#leftArea div.leftNavi div.mid {
+	width:204px;
+	border-right:1px solid #e9e9e9;
+}
+#leftArea div.leftNavi div.mid div.inner {
+	width:183px;
+	padding:4px 10px 0px 10px;
+	background-color:#f4f3f3;
+	border-right:1px solid #bcbcbc;
+}
+#leftArea div.leftNavi div.mid div.inner ul li {
+	position:relative;
+	border-bottom:1px dotted #ccc;
+}
+#leftArea div.leftNavi div.mid div.inner ul li.btm {
+	border-bottom:none!important;
+}
+#leftArea div.leftNavi div.mid div.inner ul li a {
+	width:173px;
+	padding:5px 0px 5px 10px;
+	display:block;
+}
+#leftArea div.leftNavi div.mid div.inner ul li a:visited {
+	color:#1D3994;
+}
+#leftArea div.leftNavi div.mid div.inner ul li a.mainMenu span {
+	display:block;
+	float:left;
+}
+#leftArea div.leftNavi div.mid div.inner ul li a.mainMenu span.name {
+	width:169px;
+	cursor:pointer;
+}
+#leftArea div.leftNavi div.mid div.inner ul li a.mainMenu span.ico {
+	width:4px;
+	height:7px;
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -201px -987px;
+	margin:3px 0px 0px 0px;
+}
+* html #leftArea div.leftNavi div.mid div.inner ul li a.mainMenu span.ico {
+	line-height:0px;
+	font-size:1px;
+}
+#leftArea div.leftNavi div.mid div.inner ul li a:hover,
+#leftArea div.leftNavi div.mid div.inner ul li.menuOn a.mainMenu {
+	color:#FFF;
+	background-color:#2d5393;
+}
+#leftArea div.leftNavi div.mid div.inner ul li a.mainMenu:hover span.name {
+	text-decoration:underline;
+}
+/* newCustomer ---------------------------------------------------------------------------*/
+#leftArea #newCustomer div.title h2 {
+	border-bottom:3px solid #af7b3e;
+}
+#leftArea #newCustomer.leftNavi div.title div.line {
+	border-bottom:3px solid #f2eadf;
+}
+#leftArea #newCustomer.leftNavi div.mid div.inner ul li a {
+	color:#855c2e;
+}
+#leftArea #newCustomer.leftNavi div.top {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 0px -1857px;
+}
+#leftArea #newCustomer.leftNavi div.btm {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 0px -1864px;
+}
+#leftArea #newCustomer.leftNavi div.mid div.inner {
+	background-color:#fcf7f0;
+}
+#leftArea #newCustomer.leftNavi div.mid div.inner ul li {
+	border-bottom:1px dotted #d6cfc5;
+}
+#leftArea #newCustomer li.btm a span {
+	display:block;
+	float:left;
+	width:10px;
+	height:10px;
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -195px -2114px;
+	margin:4px 4px 0px 0px;
+	text-decoration:none;
+}
+* html #leftArea #newCustomer li.btm a span {
+	line-height:0px;
+}
+#leftArea #newCustomer.leftNavi div.mid div.inner ul li a:hover {
+	color:#FFF;
+	background-color:#af7b3e;
+}
+#leftArea #newCustomer li.btm a:hover span {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -195px -2164px;
+	text-decoration:none;
+}
+
+/* subMenu ---------------------------------------------------------------------------*/
+#leftArea div.leftNavi div.mid div.inner ul li.menuOff .subMenu {
+	display:none;
+}
+#leftArea div.leftNavi div.mid div.inner ul li.menuOn .subMenu {
+	display:block;
+}
+#leftArea .subMenu {
+	width:196px;
+	border:2px solid #2d5393;
+	position:absolute;
+	z-index:2;
+	left:179px;
+	top:0px;
+	background-color:#FFF;
+}
+* html #leftArea .subMenu {
+	left:183px;
+}
+*:first-child+html #leftArea .subMenu {
+	left:183px;
+}
+#leftArea div.leftNavi div.mid div.inner ul li ul li {/*#leftArea .subMenu ul li */
+	width:100%;
+	border-bottom:none;
+}
+#leftArea div.leftNavi div.mid div.inner ul li ul li a {/*#leftArea .subMenu ul li a */
+	width:176px;
+	display:block;
+	padding:6px 10px;
+}
+#leftArea .subMenu ul li a:hover {
+	color:#FFF;
+	background-color:#2d5393;
+}
+/* leftBn
+==================================================================================== */
+#leftBn li {
+	margin:0px 0px 10px 0px;
+}
+
+/* login_box -------------------------------------------------------------------------------*/
+#login_box {
+	padding:0 0 10px;
+	text-align:center;
+	width:205px;
+}
+.login_pad {
+	padding:0 10px;
+}
+.login_pad span.mark2 {
+	background-position:-196px -984px;
+}
+.login_area {
+	background:url(/contents/images/login_body.gif) repeat-y scroll 0 0 transparent;
+	font-size:80%;
+}
+.login_left {
+	float:left;
+	width:90px;
+}
+.login_right {
+	float:right;
+	width:90px;
+	}
+.login_line {
+	background:url(/contents/images/dot_line.gif) repeat-x scroll 0 0 transparent;
+	font-size:1px;
+	height:1px;
+	width:186px;
+}
+.login_tx {
+	font-size:110%;
+	padding:6px 0 10px;
+	text-align:center;
+}
+.login_tx img {
+	margin-right:3px;
+	padding:4px 0 0;
+}
+.login_txb {
+	background-image:url(/contents/images/loginmark.gif);
+}
+#usr {
+	padding:2px 0px 0px 11px;
+	text-align:left;
+}
+#usr li {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -197px -983px;
+	padding:0px 0px 3px 15px;
+}
+* html #login_box img {
+	vertical-align: baseline;
+}
+* html #login_box div.login_area img {
+	vertical-align:top;
+}
+*:first-child+html #login_box img {
+	vertical-align:top;
+}
+
+
+/* divRefer -------------------------------------------------------------------------------*/
+#product_box {
+	padding:0 0 10px;
+	width:205px;
+}
+#product_box div.product_area {
+	background:transparent url(/contents/images/product_body.gif) repeat-y scroll 0px 0px;
+}
+#product_box div.product_area .mapi {
+	background:transparent url(/contents/images/mark.gif) no-repeat scroll 0px 5px;
+	margin-left:8px;
+	padding:0px 10px 3px 10px;
+}
+#product_box div.product_area div.menu_line {
+	border-bottom:1px dotted #002b71;
+	margin:0px 1px;
+}
+#product_box div.product_area div.product_right {
+	font-size:85%;
+	padding:5px 10px 5px 0px;
+	text-align:right;
+}
+#product_box div.product_area div.product_right img {
+	vertical-align:middle;
+}
+* html #product_box img {
+	vertical-align:top;
+}
+*:first-child+html #product_box img {
+	vertical-align:top;
+}
+
+
+/* refer -------------------------------------------------------------------------------*/
+#refer div.inner {
+	border:1px solid #DFDFDF;
+}
+#refer h2 {
+	font-size:100%;
+	color:#1664EA;
+	font-weight:bold;
+	margin:0px;
+	padding:5px 8px;
+	background-color:#F3F3F3;
+	border-bottom:1px solid #DFDFDF;
+}
+#refer ul {
+	padding:10px 10px 0px 10px;
+	border-bottom:1px dotted #DFDFDF;
+}
+#refer ul.mark2 li {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -198px -983px;
+	margin:0px 0px 10px 0px;
+}
+#refer p {
+	padding:0px 10px 0px 0px;
+}
+
+
+/* ====================================================================================
+
+footer
+
+==================================================================================== */
+#footer {
+	width:auto;
+	background-color:#f4f4f4;
+	margin:20px 0px 0px 0px;
+	padding:18px 0px;
+}
+#footer a {
+	text-decoration:none;
+}
+#footer a:hover {
+	text-decoration:underline;
+}
+#footer ul {
+	width:850px;
+	margin:0px auto 10px auto;
+	padding:0px 0px 0px 40px;
+}
+* html #footer ul {
+	width:900px;
+	padding:0px 0px 0px 20px;
+}
+*:first-child+html #footer ul {
+	width:900px;
+	padding:0px 0px 0px 20px;
+}
+*:first-child+html #footer ul li ul {
+	width:100%;
+	padding:0px;
+}
+#footer ul li {
+	width:auto;
+	float:left;
+	margin:0px 50px 0px 0px;
+}
+* html #footer ul li {
+	width:140px;
+}
+*:first-child+html #footer ul li {
+	width:140px;
+}
+#footer ul li p {
+	margin:0px 0px 12px 0px;
+	font-weight:bold;
+	color:#aaa;
+}
+#footer ul li ul {
+	width:100%;
+	padding:0px;
+	margin:0px;
+}
+#footer ul li ul li {
+	width:100%;
+	float:none;
+	margin:0px 0px 8px 0px;
+	color:#d8d8d8;
+}
+#footer p.copyRight {
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:center;
+	margin:30px 0px 0px 0px;
+	font-size:11px;
+	color:#aaa;
+}
+
+
+/* ====================================================================================
+
+Parts
+
+==================================================================================== */
+
+/* Link Design -------------------------------------------------------------------------------*/
+.news ul li a,
+.marknm a,
+.mark2 a,
+.mark2b a,
+.mark2c a,
+.mark2d a,
+.mark3 a,
+.mark3b a,
+.mark5 a,
+.pageTop a,
+.mark6 a,
+.mark6b a,
+.pdf a,
+.xls a,
+.doc a,
+.zip a {
+	text-decoration:none;
+}
+.news ul li a:hover,
+.marknm a:hover,
+.mark2 a:hover,
+.mark2b a:hover,
+.mark2c a:hover,
+.mark2d a:hover,
+.mark3 a:hover,
+.mark3b a:hover,
+.mark5 a:hover,
+.pageTop a:hover,
+.mark6 a:hover,
+.mark6b a:hover,
+.pdf a:hover,
+.xls a:hover,
+.doc a:hover,
+.zip a:hover {
+	text-decoration:underline;
+}
+.news ul li,
+.marknm li,
+.marknm,
+.mark2 li,
+.mark2,
+.mark2b,
+.mark2c,
+.mark2d,
+.mark3 li,
+.mark3,
+.mark3b,
+.mark5,
+.mark6 li,
+.mark6,
+.mark6b,
+.pdf,
+.xls,
+.doc,
+.zip {
+	padding:0px 0px 0px 15px;
+	margin:0px 0px 5px 0px;
+	list-style:none;
+}
+.news ul li,
+.marknm li,
+.marknm {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -198px -2207px;
+}
+.marknm li ol li {
+	background:none;
+	list-style:decimal;
+	padding:0px;
+}
+.marknm .mark2,
+.mark2 li,
+.mark2 {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -198px -981px;
+}
+.mark2b a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -198px -982px;
+}
+.mark2b,
+.mark3b,
+.mark5,
+.pageTop {
+	padding:0px;
+	text-align:right;
+}
+.pageTop {
+	margin:40px 0px 0px 0px;
+}
+.mark2b a,
+.mark3b a,
+.mark5 a,
+.pageTop a {
+	padding:0px 0px 0px 15px;
+}
+.mark2c,
+.mark6b {
+	padding:0px;
+}
+.mark2c span,
+.mark6b span {
+	display:inline-block;
+	width:7px;
+	height:19px;
+	text-align:left;
+	text-indent:-9999px;
+	margin:0px 0px 0px 7px;
+}
+.mark2c span {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -201px -981px;
+}
+.mark2d {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -198px -1154px;
+}
+.marknm .mark3,
+.mark3 li,
+.mark3 {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -195px -1418px;
+}
+.mark3b a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -195px -1420px;
+}
+.mark5 a,
+.pageTop a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -198px -1330px;
+}
+.mark6 li,
+.mark6 {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -198px -1240px;
+}
+.mark6b span {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -198px -1240px;
+}
+.pdf,
+.xls,
+.doc,
+.zip {
+	padding-left:22px!important;
+}
+a.pdf,
+a.xls,
+a.doc,
+a.zip {
+	padding:2px 0px 2px 15px;
+}
+.marknm .pdf,
+.pdf {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -189px -1511px;
+}
+.marknm .xls,
+.xls {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -189px -1567px;
+}
+.marknm .doc,
+.doc {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -189px -1623px;
+}
+.marknm .zip,
+.zip {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -189px -1678px;
+}
+ul.marknm,
+ul.mark2,
+ul.mark3,
+ul.mark6 {
+	background:none;
+	padding:0px 0px 0px 0px;
+}
+ul.marknm li,
+ul.mark2 li,
+ul.mark3 li,
+ul.mark6 li {
+	margin:5px 0px;
+}
+.pageNum {
+	display:table;
+	margin:0px auto;
+}
+* html .pageNum {
+	width:332px;
+}
+*:first-child+html .pageNum {
+	width:332px;
+}
+.pageNum li {
+	float:left;
+	margin:0px 4px 0px 0px;
+	width:17px;
+	height:17px;
+	line-height:17px;
+	text-align:center;
+	border:1px solid #CCCCCC;
+	font-size:10px;
+}
+.pageNum li.current,
+.pageNum li a:hover {
+	color:#FFF;
+	background-color:#1664EA;
+}
+.pageNum li.mark2,
+.pageNum li.mark2c {
+	background:none;
+	padding:0px;
+}
+.pageNum li.mark2 {
+	margin:0px 0px 0px 32px;
+}
+.pageNum li.mark2c {
+	margin:0px 32px 0px 0px;
+}
+.pageNum li a {
+	color:#1664EA;
+	text-decoration:none;
+	display:block;
+}
+.pageNum li.mark2 a,
+.pageNum li.mark2c a {
+	width:2px;
+	height:100%;
+	padding:0px 0px 0px 15px;
+}
+.pageNum li.mark2 a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -195px -982px;
+}
+.pageNum li.mark2c a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -195px -1156px;
+}
+.pageNum li.mark2 a:hover {
+	background:#1664EA url(/common/images/misumiec.png) no-repeat scroll -195px -1069px;
+}
+.pageNum li.mark2c a:hover {
+	background:#1664EA url(/common/images/misumiec.png) no-repeat scroll -195px -1196px;
+}
+
+
+/* PageNum Design for CMS  -------------------------------------------------------------------------------*/
+.ec_search_pager {
+	margin-top:20px;
+	text-align:center;
+}
+.ec_search_pager_boad {
+	margin:0px auto;
+}
+.ec_search_pager_boad .current_page,
+.ec_search_pager_boad .link_page {
+	border:1px solid #CCCCCC;
+	font-size:10px;
+	text-align:center;
+	vertical-align:middle;
+	padding:2px 5px;
+	margin:0px 1px;
+}
+.ec_search_pager_boad .current_page,
+.ec_search_pager_boad .link_page:hover {
+	background-color:#1664EA;
+	color:#FFF;
+	text-decoration:none;
+}
+.ec_search_pager_boad .link_page {
+	color:#1664EA;
+}
+.ec_search_pager_boad .link_before,
+.ec_search_pager_boad .link_next {
+	margin:0px 5px
+}
+
+
+/* Btn Design -------------------------------------------------------------------------------*/
+.btnGr,
+.btnBl,
+.btnOr,
+.btnGr180,
+.btnBl180,
+.btnOr180,
+.btnGr240,
+.btnBl240,
+.btnOr240 {
+	padding:0px 0px 0px 2px;
+	margin:10px 0px;
+}
+.btnGr,
+.btnBl,
+.btnOr {
+	width:118px;
+}
+.btnGr180,
+.btnBl180,
+.btnOr180 {
+	width:178px;
+}
+.btnGr240,
+.btnBl240,
+.btnOr240 {
+	width:238px;
+}
+.btnGr a,
+.btnBl a,
+.btnOr a,
+.btnGr180 a,
+.btnBl180 a,
+.btnOr180 a,
+.btnGr240 a,
+.btnBl240 a,
+.btnOr240 a {
+	display:block;
+	color:#FFF;
+	text-decoration:none;
+	padding:0px 3px 0px 0px;
+	cursor:pointer;
+}
+.btnGr a:visited,
+.btnBl a:visited,
+.btnOr a:visited,
+.btnGr180 a:visited,
+.btnBl180 a:visited,
+.btnOr180 a:visited,
+.btnGr240 a:visited,
+.btnBl240 a:visited,
+.btnOr240 a:visited {
+	color:#FFF;
+}
+.btnGr a:hover,
+.btnBl a:hover,
+.btnOr a:hover,
+.btnGr180 a:hover,
+.btnBl180 a:hover,
+.btnOr180 a:hover,
+.btnGr240 a:hover,
+.btnBl240 a:hover,
+.btnOr240 a:hover {
+	text-decoration:underline;
+}
+.btnGr a span,
+.btnBl a span,
+.btnOr a span,
+.btnGr180 a span,
+.btnBl180 a span,
+.btnOr180 a span,
+.btnGr240 a span,
+.btnBl240 a span,
+.btnOr240 a span {
+	height:28px;
+	line-height:26px;
+	text-align:center;
+	display:block;
+}
+
+.btnGr,
+.btnGr180,
+.btnGr240 {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -203px -458px;
+}
+.btnGr a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -59px -514px;
+}
+.btnGr180 a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 1px -514px;
+}
+.btnGr240 a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 61px -514px;
+}
+.btnGr a span,
+.btnGr180 a span,
+.btnGr240 a span {
+	background:transparent url(/common/images/misumiec.png) repeat-x scroll 0px -486px;
+}
+
+.btnBl,
+.btnBl180,
+.btnBl240 {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -203px -542px;
+}
+.btnBl a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -59px -598px;
+}
+.btnBl180 a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 1px -598px;
+}
+.btnBl240 a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 61px -598px;
+}
+.btnBl a span,
+.btnBl180 a span,
+.btnBl240 a span {
+	background:transparent url(/common/images/misumiec.png) repeat-x scroll 0px -570px;
+}
+
+.btnOr,
+.btnOr180,
+.btnOr240 {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -203px -626px;
+}
+.btnOr a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll -59px -682px;
+}
+.btnOr180 a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 1px -682px;
+}
+.btnOr240 a {
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 61px -682px;
+}
+.btnOr a span,
+.btnOr180 a span,
+.btnOr240 a span {
+	background:transparent url(/common/images/misumiec.png) repeat-x scroll 0px -654px;
+}
+
+
+/* List Design -------------------------------------------------------------------------------*/
+ul.listCol2 li {
+	width:329px;
+	float:left;
+	padding:0px 0px 0px 15px;
+	margin:5px 20px 5px 0px;
+}
+ul.listCol3 li {
+	width:208px;
+	float:left;
+	padding:0px 0px 0px 15px;
+	margin:5px 20px 5px 0px;
+}
+ul.listCol4 li {
+	width:147px;
+	float:left;
+	padding:0px 0px 0px 15px;
+	margin:5px 20px 5px 0px;
+}
+ul.listNews a {
+	text-decoration:none;
+}
+ul.listNews a:hover {
+	text-decoration:underline;
+}
+ul.listNews li {
+	border-bottom:1px dotted #CCCCCC;
+	padding:5px 0px;
+}
+ul.listNews li p,
+ul.listFile li p {
+	float:left;
+	margin-bottom:0px;
+}
+ul.listNews li p {
+	width:80%;
+}
+ul.listFile li p {
+	width:76%;
+}
+ul.listFile li {
+	margin:10px 0px;
+}
+ul.listNews li p.date {
+	width:20%;
+}
+ul.listFile li p.size {
+	width:24%;
+	text-align:right;
+}
+dl.listDoc dt {
+	clear:both;
+	width:23%;
+	float:left;
+}
+dl.listDoc dd {
+	width:77%;
+	float:left;
+	margin:0px 0px 10px 0px;
+}
+dl.listQa dt,
+dl.listQa dd {
+	border:1px solid #CCCCCC;
+	padding:5px 5px 5px 10px;
+}
+dl.listQa dt {
+	background-color:#F2F2F2;
+	margin:0px 0px 2px 0px;
+}
+dl.listQa dd {
+	margin:0px 0px 10px 0px;
+}
+dl.listQa span.cap {
+	width:5%;
+	float:left;
+}
+dl.listQa .txt {
+	width:95%;
+	float:left;
+}
+dl.listQa p {
+	margin-bottom:0px;
+}
+
+/* Basic Layout -------------------------------------------------------------------------------*/
+.col1,
+.col2,
+.col3,
+.col4 {
+	margin:0px 10px 40px 10px;
+}
+.col2 .inner,
+.col3 .inner,
+.col4 .inner {
+	float:left;
+	margin:0px 20px 0px 0px;
+}
+.col2 .inner {
+	width:345px;
+}
+.col3 .inner {
+	width:220px;
+}
+.col4 .inner {
+	width:160px;
+}
+
+
+/* Font Design -------------------------------------------------------------------------------*/
+.align_l {
+	text-align:left;
+}
+.align_c {
+	text-align:center;
+}
+.align_r {
+	text-align:right;
+}
+.txtS {
+	font-size:84%;
+}
+.misumi_strong {
+	color:#EA5E00!important;
+	font-weight:bold!important;
+}
+.error {
+	color:#cc0000;
+}
+.check {
+	color:#FF3300;
+}
+.bold {
+	font-size:134%;
+	font-weight:bold;
+}
+.bold2 {
+	font-weight:bold;
+}
+.boldb {
+	font-size:134%;
+	font-weight:bold;
+	color:#002B71;
+}
+.boldb2 {
+	font-weight:bold;
+	color:#002B71;
+}
+
+
+/* Spaceing Design -------------------------------------------------------------------------------*/
+.pad_t0 {
+	padding-top:0px!important;
+}
+.pad_t5 {
+	padding-top:5px!important;
+}
+.pad_t10 {
+	padding-top:10px!important;
+}
+.pad_t15 {
+	padding-top:15px!important;
+}
+.pad_t20 {
+	padding-top:20px!important;
+}
+.pad_t25 {
+	padding-top:25px!important;
+}
+.pad_t30 {
+	padding-top:30px!important;
+}
+.pad_t35 {
+	padding-top:35px!important;
+}
+.pad_t40 {
+	padding-top:40px!important;
+}
+.pad_r0 {
+	padding-right:0px!important;
+}
+.pad_r5 {
+	padding-right:5px!important;
+}
+.pad_r10 {
+	padding-right:10px!important;
+}
+.pad_r15 {
+	padding-right:15px!important;
+}
+.pad_r20 {
+	padding-right:20px!important;
+}
+.pad_r25 {
+	padding-right:25px!important;
+}
+.pad_r30 {
+	padding-right:30px!important;
+}
+.pad_r35 {
+	padding-right:35px!important;
+}
+.pad_r40 {
+	padding-right:40px!important;
+}
+.pad_b0 {
+	padding-bottom:0px!important;
+}
+.pad_b5 {
+	padding-bottom:5px!important;
+}
+.pad_b10 {
+	padding-bottom:10px!important;
+}
+.pad_b15 {
+	padding-bottom:15px!important;
+}
+.pad_b20 {
+	padding-bottom:20px!important;
+}
+.pad_b25 {
+	padding-bottom:25px!important;
+}
+.pad_b30 {
+	padding-bottom:30px!important;
+}
+.pad_b35 {
+	padding-bottom:35px!important;
+}
+.pad_b40 {
+	padding-bottom:40px!important;
+}
+.pad_l0 {
+	padding-left:0px!important;
+}
+.pad_l5 {
+	padding-left:5px!important;
+}
+.pad_l10 {
+	padding-left:10px!important;
+}
+.pad_l15 {
+	padding-left:15px!important;
+}
+.pad_l20 {
+	padding-left:20px!important;
+}
+.pad_l25 {
+	padding-left:25px!important;
+}
+.pad_l30 {
+	padding-left:30px!important;
+}
+.pad_l35 {
+	padding-left:35px!important;
+}
+.pad_l40 {
+	padding-left:40px!important;
+}
+.mgn_t0 {
+	margin-top:0px!important;
+}
+.mgn_t5 {
+	margin-top:5px!important;
+}
+.mgn_t10 {
+	margin-top:10px!important;
+}
+.mgn_t15 {
+	margin-top:15px!important;
+}
+.mgn_t20 {
+	margin-top:20px!important;
+}
+.mgn_t25 {
+	margin-top:25px!important;
+}
+.mgn_t30 {
+	margin-top:30px!important;
+}
+.mgn_t35 {
+	margin-top:35px!important;
+}
+.mgn_t40 {
+	margin-top:40px!important;
+}
+.mgn_r0 {
+	margin-right:0px!important;
+}
+.mgn_r5 {
+	margin-right:5px!important;
+}
+.mgn_r10 {
+	margin-right:10px!important;
+}
+.mgn_r15 {
+	margin-right:15px!important;
+}
+.mgn_r20 {
+	margin-right:20px!important;
+}
+.mgn_r25 {
+	margin-right:25px!important;
+}
+.mgn_r30 {
+	margin-right:30px!important;
+}
+.mgn_r35 {
+	margin-right:35px!important;
+}
+.mgn_r40 {
+	margin-right:40px!important;
+}
+.mgn_b0 {
+	margin-bottom:0px!important;
+}
+.mgn_b5 {
+	margin-bottom:5px!important;
+}
+.mgn_b10 {
+	margin-bottom:10px!important;
+}
+.mgn_b15 {
+	margin-bottom:15px!important;
+}
+.mgn_b20 {
+	margin-bottom:20px!important;
+}
+.mgn_b25 {
+	margin-bottom:25px!important;
+}
+.mgn_b30 {
+	margin-bottom:30px!important;
+}
+.mgn_b35 {
+	margin-bottom:35px!important;
+}
+.mgn_b40 {
+	margin-bottom:40px!important;
+}
+.mgn_l0 {
+	margin-left:0px!important;
+}
+.mgn_l5 {
+	margin-left:5px!important;
+}
+.mgn_l10 {
+	margin-left:10px!important;
+}
+.mgn_l15 {
+	margin-left:15px!important;
+}
+.mgn_l20 {
+	margin-left:20px!important;
+}
+.mgn_l25 {
+	margin-left:25px!important;
+}
+.mgn_l30 {
+	margin-left:30px!important;
+}
+.mgn_l35 {
+	margin-left:35px!important;
+}
+.mgn_l40 {
+	margin-left:40px!important;
+}
+
+
+/* Table Design -------------------------------------------------------------------------------*/
+caption {
+	margin:0px 0px 3px 0px;
+}
+table.nom-tbl {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+table.spt-tbl {
+	border-collapse:separate;
+	border-spacing:1px;
+}
+table.nom-tbl,
+table.spt-tbl {
+	margin:0px 0px 20px 0px;
+}
+table.nom-tbl tr.even,
+table.spt-tbl tr.even {
+	background-color:#fafafa;
+}
+table.nom-tbl th,
+table.nom-tbl td,
+table.spt-tbl th,
+table.spt-tbl td {
+	border:1px solid #CCCCCC;
+	padding:5px;
+}
+table.nom-tbl th,
+table.spt-tbl th {
+	background-color:#F2F2F2;
+	font-weight:bold;
+}
+tr.align_c th,
+tr.align_c td {
+	text-align:center;
+}
+tr.align_r th,
+tr.align_r td {
+	text-align:right;
+}
+
+
+/* Box Layout -------------------------------------------------------------------------------*/
+.imgBox {
+	margin:0px 0px 20px 0px;
+}
+.imgBox img {
+	float:left;
+	margin:0px 10px 0px 0px;
+}
+.imgBox50,
+.imgBox100,
+.imgBox150,
+.imgBox240,
+.imgBox350 {
+	margin:0px 0px 20px 0px;
+}
+.imgBoxImg {
+	float:left;
+	margin:0px 10px 0px 0px;
+}
+.imgBoxTxt {
+	float:left;
+}
+.imgBox50 .imgBoxImg {
+	width:50px;
+}
+.imgBox50 .imgBoxTxt {
+	width:650px;
+}
+.imgBox100 .imgBoxImg {
+	width:100px;
+}
+.imgBox100 .imgBoxTxt {
+	width:600px;
+}
+.imgBox150 .imgBoxImg {
+	width:150px;
+}
+.imgBox150 .imgBoxTxt {
+	width:550px;
+}
+.imgBox240 .imgBoxImg {
+	width:240px;
+}
+.imgBox240 .imgBoxTxt {
+	width:460px;
+}
+.imgBox350 .imgBoxImg {
+	width:350px;
+}
+.imgBox350 .imgBoxTxt {
+	width:350px;
+}
+.imgBoxCap {
+	margin:0px 0px 20px 0px;
+}
+.imgBoxCap .ibcInner {
+	float:left;
+	margin:0px 10px 10px 0px;
+}
+
+
+/* ====================================================================================
+
+popup
+
+==================================================================================== */
+#popup #header {
+	background-color:#F2F2F2;
+	margin:0px 0px 20px 0px;
+	padding:5px 0px;
+}
+#popup #header div.inner,
+#popup #contents {
+	width:480px;
+	margin:0px auto;
+}
+#popup.ppL #header div.inner,
+#popup.ppL #contents {
+	width:750px;
+}
+#popup #header div.inner p.misumi {
+	width:106px;
+	height:18px;
+	float:left;
+	background:transparent url(/common/images/misumiec.png) no-repeat scroll 0px -222px;
+}
+#popup #header div.inner p.title {
+	width:50%;
+	float:left;
+	font-weight:bold;
+	font-size:14px;
+}
+#popup #footer {
+	padding:10px 0px;
+}
+#popup #footer p.copyRight {
+	margin:0px;
+}
+#popup p.btnGr {
+	width:120px;
+	margin:20px auto 0px auto;
+}
+
+
+/* ====================================================================================
+
+ClearFix
+
+==================================================================================== */
+.cf:after,
+#contents:after,
+.col1:after,
+.col2:after,
+.col3:after,
+.col4:after,
+.listCol2:after,
+.listCol3:after,
+.listCol4:after,
+ul.listNews li:after,
+ul.listFile li:after,
+dl.listDoc:after,
+dl.listQa dt:after,
+dl.listQa dd:after,
+.imgBoxCap:after,
+.pageNum:after,
+.imgBox:after,
+.imgBox50:after,
+.imgBox100:after,
+.imgBox150:after,
+.imgBox240:after,
+.imgBox350:after,
+.borderBox:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+	line-height:0;
+}
+*:first-child+html .cf,
+*:first-child+html #contents,
+*:first-child+html .col1,
+*:first-child+html .col2,
+*:first-child+html .col3,
+*:first-child+html .col4,
+*:first-child+html .listCol2,
+*:first-child+html .listCol3,
+*:first-child+html .listCol4,
+*:first-child+html ul.listNews li,
+*:first-child+html ul.listFile li,
+*:first-child+html dl.listDoc,
+*:first-child+html dl.listQa dt,
+*:first-child+html dl.listQa dd,
+*:first-child+html .imgBoxCap,
+*:first-child+html .pageNum,
+*:first-child+html .imgBox,
+*:first-child+html .imgBox50,
+*:first-child+html .imgBox100,
+*:first-child+html .imgBox150,
+*:first-child+html .imgBox240,
+*:first-child+html .imgBox350,
+*:first-child+html .borderBox {
+	display:inline-table;
+	min-height:1%;
+}
+* html .cf,
+* html #contents,
+* html .col1,
+* html .col2,
+* html .col3,
+* html .col4,
+* html .listCol2,
+* html .listCol3,
+* html .listCol4,
+* html ul.listNews li,
+* html ul.listFile li,
+* html dl.listDoc,
+* html dl.listQa dt,
+* html dl.listQa dd,
+* html .imgBoxCap,
+* html .pageNum,
+* html .imgBox,
+* html .imgBox50,
+* html .imgBox100,
+* html .imgBox150,
+* html .imgBox240,
+* html .imgBox350,
+* html .borderBox {
+	height:1%;
+}

@@ -1,0 +1,434 @@
+CCS PCH C Compiler, Version 4.068, 2159               04-Jul-12 12:47
+
+               Filename: \\vboxsvr\ernesto\proyectos mecatronica\pic c progrmas\i2c_2550\source\main.lst
+
+               ROM used: 586 bytes (2%)
+                         Largest free fragment is 32178
+               RAM used: 38 (2%) at main() level
+                         40 (2%) worst case
+               Stack:    3 worst case (1 in main + 2 for interrupts)
+
+*
+0000:  GOTO   01B6
+*
+0008:  MOVWF  05
+000A:  MOVFF  FD8,06
+000E:  MOVFF  FE0,07
+0012:  MOVLB  0
+0014:  MOVFF  FE9,0D
+0018:  MOVFF  FEA,08
+001C:  MOVFF  FE1,09
+0020:  MOVFF  FE2,0A
+0024:  MOVFF  FD9,0B
+0028:  MOVFF  FDA,0C
+002C:  MOVFF  FF3,14
+0030:  MOVFF  FF4,15
+0034:  MOVFF  FFA,16
+0038:  MOVFF  00,0F
+003C:  MOVFF  01,10
+0040:  MOVFF  02,11
+0044:  MOVFF  03,12
+0048:  MOVFF  04,13
+004C:  BTFSS  FF2.3
+004E:  GOTO   0058
+0052:  BTFSC  FF2.0
+0054:  GOTO   00AA
+0058:  BTFSS  F9D.3
+005A:  GOTO   0064
+005E:  BTFSC  F9E.3
+0060:  GOTO   010A
+0064:  MOVFF  0F,00
+0068:  MOVFF  10,01
+006C:  MOVFF  11,02
+0070:  MOVFF  12,03
+0074:  MOVFF  13,04
+0078:  BSF    0E.7
+007A:  MOVFF  0D,FE9
+007E:  MOVFF  08,FEA
+0082:  MOVFF  09,FE1
+0086:  MOVFF  0A,FE2
+008A:  MOVFF  0B,FD9
+008E:  MOVFF  0C,FDA
+0092:  MOVFF  14,FF3
+0096:  MOVFF  15,FF4
+009A:  MOVFF  16,FFA
+009E:  MOVF   05,W
+00A0:  MOVFF  07,FE0
+00A4:  MOVFF  06,FD8
+00A8:  RETFIE 0
+.................... /*__________ Quadrature De-coder I2C ___________/* 
+.................... ##                                              ## 
+.................... ##     Autor : Ernesto V. Palacios              ## 
+.................... ##                                              ## 
+.................... ##                                              ## 
+.................... ##     Titulo: QED_PIC  v1.0                    ## 
+.................... ##     Fecha : 01/07/2012                       ## 
+.................... ##                                              ## 
+.................... ##----------------------------------------------## 
+.................... ## Descripción: El presente es el código fuente ## 
+.................... ## destinado al PIC 18F2550 para el monitoreo   ## 
+.................... ## de un encoder de cuadratura. Lee las líneas  ## 
+.................... ## A y B, determinando el ángulo relativo de gi ## 
+.................... ## ro y la dirección, luego envía estos datos   ## 
+.................... ## mediante comunicación I2C.                   ## 
+.................... ## _____________________________________________##  */ 
+.................... ////////                                  \\\\\\\\ 
+.................... ///////        PIC 18F2550 @ 48MHz         \\\\\\\ 
+.................... //////             Crystal 4Mhz             \\\\\\ 
+.................... /////                                        \\\\\ 
+.................... ////    Comando 0x01 = Resetear contador      \\\\  
+.................... ///   Comando 0x10 = Cambia estado PIN_A2.     \\\ 
+.................... //                                              \\ 
+....................                                                
+....................  
+.................... #include <18F2550.h> 
+.................... //////// Standard Header file for the PIC18F2550 device //////////////// 
+.................... #device PIC18F2550 
+.................... #list 
+....................  
+.................... #fuses XTPLL,NOMCLR,NOWDT,NOPROTECT,NOLVP,NODEBUG,USBDIV,PLL1,CPUDIV1,VREGEN 
+.................... #use delay(clock=48M)  
+*
+018E:  CLRF   FEA
+0190:  MOVLW  26
+0192:  MOVWF  FE9
+0194:  MOVF   FEF,W
+0196:  BZ    01B4
+0198:  MOVLW  0F
+019A:  MOVWF  01
+019C:  CLRF   00
+019E:  DECFSZ 00,F
+01A0:  BRA    019E
+01A2:  DECFSZ 01,F
+01A4:  BRA    019C
+01A6:  MOVLW  8F
+01A8:  MOVWF  00
+01AA:  DECFSZ 00,F
+01AC:  BRA    01AA
+01AE:  NOP   
+01B0:  DECFSZ FEF,F
+01B2:  BRA    0198
+01B4:  RETLW  00
+.................... #use i2c( SLAVE, fast, sda=PIN_B0, scl=PIN_B1, ADDRESS = 0x36, FORCE_HW, ) 
+*
+00F2:  MOVF   FC9,W
+00F4:  MOVFF  27,FC9
+00F8:  BSF    FC6.4
+00FA:  BCF    F9E.3
+00FC:  BTFSC  FC7.0
+00FE:  BRA    00FC
+0100:  CLRF   01
+0102:  BTFSC  FC6.4
+0104:  INCF   01,F
+0106:  GOTO   0186 (RETURN)
+....................  
+.................... //--------------_________ DEFINICIONES___________------------------------------- 
+.................... #byte     PORTA=0xF80 
+.................... #byte     PORTB=0xF81 
+.................... #byte     PORTC=0xF82 
+.................... #byte     PORTD=0xF83 
+.................... #byte     TRISA=0xF92 
+.................... #byte     TRISB=0xF93 
+.................... #byte     TRISC=0xF94 
+.................... #byte     TRISD=0xF95 
+.................... #byte    INTCON=0xFF2 
+.................... #byte   INTCON2=0xFF1 
+.................... //------------------------------------------------------------------------------ 
+....................  
+.................... #define  write      PIN_A0     // [02]   Led de Prueba 
+.................... #define  blinky     PIN_A1    //  [03]   Led de Prueba 
+.................... #define  entra      PIN_A3 
+.................... #define  sale       PIN_A4 
+.................... #define  A          PIN_B4   //  [25]   ENCONDER_A 
+.................... #define  B          PIN_A2  //   [04]   ENCODER_B 
+....................  
+.................... //--------_________VARIABLES GLOBALES_________---------------------------------- 
+....................  
+.................... int32 count = -21910;      // valor actual del enconder 
+.................... int32 test = -45360; 
+.................... int   dir;            // sentido de giro del motor 
+.................... byte  state;         // Estado de la interrupción i2c 
+.................... int   leer_i2c;     //  Comando recibido desde I2C 
+....................  
+.................... int  i; //Contador del I2C 
+.................... int8 bit8; 
+....................  
+.................... //--------_________INTERRUPCION EXTERNA_______---------------------------------- 
+.................... #INT_RB 
+.................... void external_RB4() 
+.................... { 
+....................    int8 dummy; 
+....................    output_toggle( entra ); 
+*
+00AA:  BCF    F92.3
+00AC:  BTG    F89.3
+....................     
+....................    if( input(B) && input(A) )   // Ambas señales en alto +1 
+00AE:  BSF    F92.2
+00B0:  BTFSS  F80.2
+00B2:  BRA    00CC
+00B4:  BSF    F93.4
+00B6:  BTFSS  F81.4
+00B8:  BRA    00CC
+....................       count++;                // Incrementa contador 
+00BA:  MOVLW  01
+00BC:  ADDWF  18,F
+00BE:  BTFSC  FD8.0
+00C0:  INCF   19,F
+00C2:  BTFSC  FD8.2
+00C4:  INCF   1A,F
+00C6:  BTFSC  FD8.2
+00C8:  INCF   1B,F
+....................    else if( !input(B) && input(A) ) // Sólo A en alto -1 
+00CA:  BRA    00E8
+00CC:  BSF    F92.2
+00CE:  BTFSC  F80.2
+00D0:  BRA    00E8
+00D2:  BSF    F93.4
+00D4:  BTFSS  F81.4
+00D6:  BRA    00E8
+....................       count--;           // Decrementa contador 
+00D8:  MOVLW  FF
+00DA:  ADDWF  18,F
+00DC:  BTFSS  FD8.0
+00DE:  ADDWF  19,F
+00E0:  BTFSS  FD8.0
+00E2:  ADDWF  1A,F
+00E4:  BTFSS  FD8.0
+00E6:  ADDWF  1B,F
+....................  
+....................    dummy = PORTB;    // Lee el puerto B para limpiar la interrupción 
+00E8:  MOVFF  F81,27
+....................     
+.................... } 
+....................  
+.................... //--------_________INTERRUPCION I2C_BUS______---------------------------------- 
+00EC:  BCF    FF2.0
+00EE:  GOTO   0064
+.................... #INT_SSP 
+.................... void ISR_I2C() 
+.................... { 
+....................    // Interrupcion en el bus I2c 
+....................    i++; 
+*
+010A:  INCF   23,F
+....................    output_toggle( sale ); 
+010C:  BCF    F92.4
+010E:  BTG    F89.4
+....................    state = i2c_isr_state(); 
+0110:  BTFSC  FC7.5
+0112:  BRA    011A
+0114:  CLRF   25
+0116:  BTFSC  FC9.0
+0118:  BSF    25.7
+011A:  MOVF   25,W
+011C:  INCF   25,F
+011E:  MOVWF  21
+....................     
+....................    if( state < 0x80 )                   //Envio de datos desde maestro 
+0120:  MOVF   21,W
+0122:  SUBLW  7F
+0124:  BNC   017A
+....................    { 
+....................       if( i == 1 ) 
+0126:  DECFSZ 23,W
+0128:  BRA    0138
+....................       { 
+....................          leer_i2c = i2c_read(0); 
+012A:  BTFSS  FC7.0
+012C:  BRA    012A
+012E:  MOVFF  FC9,22
+....................          output_toggle( entra ); 
+0132:  BCF    F92.3
+0134:  BTG    F89.3
+....................       } 
+....................       else 
+0136:  BRA    013C
+....................          leer_i2c = 0xFF; 
+0138:  MOVLW  FF
+013A:  MOVWF  22
+....................        
+....................       if(leer_i2c == 0x01)// 
+013C:  DECFSZ 22,W
+013E:  BRA    0148
+....................          count = 0;                  // Resetear contador 
+0140:  CLRF   1B
+0142:  CLRF   1A
+0144:  CLRF   19
+0146:  CLRF   18
+....................       if(leer_i2c == 0x02)          //  
+0148:  MOVF   22,W
+014A:  SUBLW  02
+014C:  BNZ   0152
+....................          output_toggle( write );   // Alternar Led 
+014E:  BCF    F92.0
+0150:  BTG    F89.0
+....................        
+....................        
+....................       if( leer_i2c == 0x10 ) 
+0152:  MOVF   22,W
+0154:  SUBLW  10
+0156:  BNZ   015C
+....................          bit8 = count; 
+0158:  MOVFF  18,24
+....................       if( leer_i2c == 0x11 ) 
+015C:  MOVF   22,W
+015E:  SUBLW  11
+0160:  BNZ   0166
+....................          bit8 = count >> 8; 
+0162:  MOVFF  19,24
+....................       if( leer_i2c == 0x12 ) 
+0166:  MOVF   22,W
+0168:  SUBLW  12
+016A:  BNZ   0170
+....................          bit8 = count >> 16; 
+016C:  MOVFF  1A,24
+....................       if( leer_i2c == 0x13 ) 
+0170:  MOVF   22,W
+0172:  SUBLW  13
+0174:  BNZ   017A
+....................          bit8 = count >> 24; 
+0176:  MOVFF  1B,24
+....................           
+....................           
+....................    } 
+....................     
+....................    if(state >= 0x80)                //Maestro pide datos 
+017A:  MOVF   21,W
+017C:  SUBLW  7F
+017E:  BC    0188
+....................    { 
+....................       i2c_write( bit8 ); 
+0180:  MOVFF  24,27
+0184:  BRA    00F2
+....................       i=0; 
+0186:  CLRF   23
+....................    } 
+....................  
+.................... } 
+.................... //------------------------------------------------------------------------------ 
+0188:  BCF    F9E.3
+018A:  GOTO   0064
+.................... void main( void ) 
+.................... { 
+*
+01B6:  CLRF   FF8
+01B8:  BCF    FD0.7
+01BA:  BSF    0D.7
+01BC:  CLRF   FEA
+01BE:  CLRF   FE9
+01C0:  BSF    F93.1
+01C2:  BSF    F93.0
+01C4:  MOVLW  36
+01C6:  MOVWF  FC8
+01C8:  MOVWF  FC6
+01CA:  MOVF   FC1,W
+01CC:  ANDLW  C0
+01CE:  IORLW  0F
+01D0:  MOVWF  FC1
+01D2:  MOVLW  07
+01D4:  MOVWF  FB4
+01D6:  MOVLW  6A
+01D8:  MOVWF  18
+01DA:  MOVLW  AA
+01DC:  MOVWF  19
+01DE:  MOVLW  FF
+01E0:  MOVWF  1A
+01E2:  MOVWF  1B
+01E4:  MOVLW  D0
+01E6:  MOVWF  1C
+01E8:  MOVLW  4E
+01EA:  MOVWF  1D
+01EC:  MOVLW  FF
+01EE:  MOVWF  1E
+01F0:  MOVWF  1F
+01F2:  MOVLW  03
+01F4:  MOVWF  25
+....................    enable_interrupts( GLOBAL ); 
+01F6:  MOVLW  C0
+01F8:  IORWF  FF2,F
+....................    enable_interrupts( INT_RB );    // Contador Encoder 
+01FA:  BSF    FF2.3
+....................    enable_interrupts( INT_SSP );  //  ComunicaciÃ³n i2c  
+01FC:  BSF    F9D.3
+....................    disable_interrupts( INT_EXT ); 
+01FE:  BCF    FF2.4
+....................     
+....................    count = 0; 
+0200:  CLRF   1B
+0202:  CLRF   1A
+0204:  CLRF   19
+0206:  CLRF   18
+....................    i = 0; 
+0208:  CLRF   23
+....................     
+....................    bit_clear(TRISA,0);          //  Led como salida - I2C_WRITE 
+020A:  BCF    F92.0
+....................    bit_clear(TRISA,1);         //  Led como salida - Blinky 
+020C:  BCF    F92.1
+....................    bit_set  (TRISA,2);        // Enc_A <- entrada 
+020E:  BSF    F92.2
+....................    bit_clear(TRISA,3);       //  Led como salida - Sale de  READ 
+0210:  BCF    F92.3
+....................  
+....................    bit_set  (TRISB,4);      // Enc_B <- entrada 
+0212:  BSF    F93.4
+....................  
+....................  
+....................    output_low( entra ); 
+0214:  BCF    F92.3
+0216:  BCF    F89.3
+....................    output_low( sale  ); 
+0218:  BCF    F92.4
+021A:  BCF    F89.4
+....................  
+....................    output_high( write ); 
+021C:  BCF    F92.0
+021E:  BSF    F89.0
+....................    delay_ms( 250 ); 
+0220:  MOVLW  FA
+0222:  MOVWF  26
+0224:  RCALL  018E
+....................    output_low( write ); 
+0226:  BCF    F92.0
+0228:  BCF    F89.0
+....................    delay_ms( 250 ); 
+022A:  MOVLW  FA
+022C:  MOVWF  26
+022E:  RCALL  018E
+....................    output_high( write ); 
+0230:  BCF    F92.0
+0232:  BSF    F89.0
+....................    delay_ms( 250 ); 
+0234:  MOVLW  FA
+0236:  MOVWF  26
+0238:  RCALL  018E
+....................    output_low( write ); 
+023A:  BCF    F92.0
+023C:  BCF    F89.0
+....................    while(1) 
+....................    { 
+....................        //  Estar atento al cambio de estado en el bus I2C 
+....................       //   o en la interrupción del encoder 
+....................       output_toggle( blinky ); 
+023E:  BCF    F92.1
+0240:  BTG    F89.1
+....................       delay_ms(30); 
+0242:  MOVLW  1E
+0244:  MOVWF  26
+0246:  RCALL  018E
+....................       i=0; 
+0248:  CLRF   23
+....................    } 
+024A:  BRA    023E
+.................... } 
+024C:  SLEEP 
+
+Configuration Fuses:
+   Word  1: 0220   XTPLL NOIESO NOFCMEN PLL1 CPUDIV1 USBDIV
+   Word  2: 1E3E   BROWNOUT NOWDT BORV20 PUT WDT32768 VREGEN
+   Word  3: 0300   PBADEN CCP2C1 NOMCLR NOLPT1OSC RESERVED
+   Word  4: 0081   STVREN NODEBUG NOLVP NOXINST RESERVED
+   Word  5: C00F   NOPROTECT NOCPD NOCPB
+   Word  6: E00F   NOWRT NOWRTD NOWRTC NOWRTB
+   Word  7: 400F   NOEBTR NOEBTRB
