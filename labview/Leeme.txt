@@ -2,11 +2,14 @@ Aqui se guardaran los documentos del API para LabVIEW
 
 Se dividen en dos categorías:
 
-   -  HTTP
-   -  Serial
+   -  HTTP      (Comunicación de red)
+   -  Serial    (Comunicación serial)
 
-Cada categoria tiene tres clases:
+Dentro de la carpeta 'librerias' se encuentran las sburutinas necesarias para que funcione correctamente la comunicacion de red con el microcontrolador.
 
-   -  Bajo Nivel   [ASM]
-   -  Nivel Medio  [MOT]
-   -  Alto nivel   [DLZ]
+La carpeta 'Practicas' contiene las Practicas desarrolladas para el deslizador.
+
+La carpeta 'Pruebas' contiene programas útiles para probar las comunicación con el microcontrolador y servomotor.
+
+
+

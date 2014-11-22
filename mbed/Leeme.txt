@@ -9,6 +9,6 @@ necesarios para el micro controlador ARM-CortexM3-LPC1768 dentro
 de la plataforma mbed [http//:mbed.org].
 
 Este código puede ser compilado en linea a través del compilador 
-en el servidor del sitio  [http//:mbed.org].
+en el servidor del sitio  [http//:developer.mbed.org].
 
 

@@ -1,0 +1,27 @@
+Componentes placa mbed_v2
+
+LISTA COMPLETA
+
+
+COMPONENTES IMPORTANTES:
+
+N°      Nombre    	Descripcion
+
+1	AD620N		Amplificador Operacional
+1	MAX232		Conversor RS-232 - TTL
+1	DIP Switch 3	Switcher de tres bits DIP
+
+5      2k2 R		Resistencias de 2200 ohm 1/4 watt
+5      3k3 R		Resistencias de 3300 ohm 1/4 watt
+5 	470k R		Resistencias de 470k ohm 1/4 watt
+5	220 R		Resistencias 220 ohm 1/2 watt
+5      10k R		Resistencias de 10K ohm 1/4 watt
+
+10	Cap 0.1uF 	Capacitor cerámico [104]
+5	Cap 1uF		Capacitor Electrolitico.
+
+2	20pin x 2		Headers hembra de dos filas 20 pines
+2	Conector Ethernet  con aislamiento magnetico.
+2	Puente de diodos de 1A
+
+
