@@ -1,7 +1,9 @@
-deslizadorUtn
+DeslizadorUtn
 =============
 
-Repositorio para el deslizador lineal desarrollado para la Universidad Técnica del Norte
+Repositorio para el deslizador lineal desarrollado para la Universidad Técnica del Norte.
+
+Manual de ayuda: https://github.com/ernestopalacios/deslizadorUtn/wiki
 
 El reposito esta dividido en las siguientes carpetas:
 
